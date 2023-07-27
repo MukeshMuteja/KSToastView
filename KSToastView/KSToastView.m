@@ -287,11 +287,11 @@ static NSTextAlignment _textAligment = NSTextAlignmentCenter;
 }
 
 + (CGFloat)_portraitScreenWidth {
-	return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? CGRectGetWidth([UIScreen mainScreen].bounds) : CGRectGetHeight([UIScreen mainScreen].bounds);
+	return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? CGRectGetWidth([UIScreen mainScreen].bounds) : CGRectGetHeight([UIScreen mainScreen].bounds);
 }
 
 + (CGFloat)_portraitScreenHeight {
-	return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? CGRectGetHeight([UIScreen mainScreen].bounds) : CGRectGetWidth([UIScreen mainScreen].bounds);
+	return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? CGRectGetHeight([UIScreen mainScreen].bounds) : CGRectGetWidth([UIScreen mainScreen].bounds);
 }
 
 + (UIView *)_keyWindow {
